@@ -3,8 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <title>通讯录列表</title>
+    <style>
+    h1 {text-align:center;}
+    p.main {text-align:justify;}
+    .btn-group button {
+        background-color: dodgerblue; /* Green background */
+        border: 2px solid white; /* Green border */
+        color: white; /* White text */
+        padding: 10px 24px; /* Some padding */
+        cursor: pointer; /* Pointer/hand icon */
+        float: left; /* Float the buttons side by side */
+    }
+
+    /* Clear floats (clearfix hack) */
+    .btn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .btn-group button:not(:last-child) {
+        border-right: none; /* Prevent double borders */
+    }
+
+    /* Add a background color on hover */
+    .btn-group button:hover {
+        background-color: dodgerblue;
+    }
+    table,th,td
+    {
+        border:2px solid lightblue;
+    }
+    table
+    {
+        width:100%;
+    }
+    th
+    {
+        background-color:lightskyblue;
+        color:white;
+        font-size: 150%;
+        height:70px;
+    }
+    tr
+    {
+        height:50px;
+    }
+    td
+    {
+        font-size: 120%;
+        text-align:center;
+    }
+
+    </style>
 </head>
 <body>
     <h1>通讯录</h1>
+    <div class="btn-group" style="width:100%">
+        <button style="width: 33.33%">添   加</button>
+        <button style="width: 33.33%">编   辑</button>
+        <button style="width: 33.33%">删   除</button>
+    </div>
+    <table border="1">
+    <tr>
+    <th>姓名</th>
+    <th>电话</th>
+    <th>邮箱</th>
+    <th>住址</th>
+    <th>QQ号</th>
+    </tr>
+    <tr>
+        <td>张三</td>
+        <td>18888888888</td>
+        <td>zhangsan@zhang.com</td>
+        <td>中国</td>
+        <td>123456789</td>
+    </tr>
+    <tr>
+        <td>李四</td>
+        <td>16666666666</td>
+        <td>lisi@li.com</td>
+        <td>中国</td>
+        <td>987654321</td>
+    </tr>
+
+
+    </table>
 </body>
 </html>
