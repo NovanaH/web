@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加新用户</title>
+    <script type="text/javascript">
+        var  regBox = {
+            regEmail : /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, //邮箱
+            regName : /^[a-z0-9_-]{3,16}$/, //用户名
+            regMobile : /^1(3|4|5|7|8)\d{9}$/, //手机
+        }
+
+        function submit_click()
+        {
+            var name = document.getElementById("name_new").value;
+            var mobile = document.getElementById("tel_new").value;
+            var email = document.getElementById("email_new").value;
+            var  mflag = regBox.regMobile.test(mobile);
+            var  eflag = regBox.regEmail.test(email);
+            if(name == "")
+            {
+                alert("姓名不能为空！");
+            }
+           else if (mflag&&eflag)
+            {
+                alert( "提交成功！" );
+            }
+            else if(!mflag) {
+                alert("请重新输入电话！");
+            }else if(!eflag) {
+
+                alert("请重新输入邮箱！");
+            }
+        }
+        isClick = false;//重新初始化
+    </script>
+    <style>
+        h1 {text-align:center;}
+        table,th,td
+        {
+            border:2px solid lightblue;
+        }
+        table
+        {
+            width:100%;
+        }
+        th
+        {
+            background-color:lightskyblue;
+            color:white;
+            font-size: 150%;
+            height:70px;
+        }
+        tr
+        {
+            height:50px;
+        }
+        td
+        {
+            font-size: 150%;
+            text-align:center;
+        }
+    </style>
+
+</head>
+<body>
+<h1>添加新用户</h1>
+<Table>
+    <tr>
+        <td>姓名：</td><td><input type=text id="name_new"></td>
+    </tr>
+    <tr>
+        <td>电话：</td><td><input type=tel id="tel_new"></td>
+    </tr>
+    <tr>
+        <td>邮箱：</td><td><input type=email id="email_new"></td>
+    </tr>
+    <tr>
+        <td>地址：</td><td><input type=text id="add_new"></td>
+    </tr>
+    <tr>
+        <td>QQ号：</td><td><input type=text id="QQ_new"></td>
+    </tr>
+</Table>
+<button id="submit" onclick="submit_click()">提交</button>
+<p id="demo"></p>
+<script>
+    var myElement = document.getElementsById("tel_new").value;
+    document.getElementById("demo").innerHTML =
+        "电话是：" + myElement.innerHTML;
+</script>
+</body>
+</html>
